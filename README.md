@@ -1,7 +1,7 @@
 # User Management System (.NET MVC)
 
 ## Tech Stack
-- ASP.NET MVC (.NET Framework or Core 3.1)
+- ASP.NET MVC 
 - Entity Framework
 - SQL Server (MSSQL)
 - Vanilla JavaScript, HTML/CSS
