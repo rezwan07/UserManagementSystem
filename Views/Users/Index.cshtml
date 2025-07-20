@@ -11,30 +11,34 @@
 </p>
 @using (Html.BeginForm("Index", "Users", FormMethod.Get))
 {
-    <p>
-        Name:
-        @Html.TextBox("searchName", ViewBag.SearchName as string, new { @class = "form-control", @style = "width: 200px; display: inline;" })
+<p>
+    Name:
+    @Html.TextBox("searchName", ViewBag.SearchName as string, new { @class = "form-control", @style = "width: 200px; display: inline;" })
 
-        Email:
-        @Html.TextBox("searchEmail", ViewBag.SearchEmail as string, new { @class = "form-control", @style = "width: 200px; display: inline;" })
+    Email:
+    @Html.TextBox("searchEmail", ViewBag.SearchEmail as string, new { @class = "form-control", @style = "width: 200px; display: inline;" })
 
-        Status:
-        <select name="statusFilter" class="form-control" style="width: 120px; display: inline;">
-            <option value="">All</option>
-            <option value="Active" @(ViewBag.StatusFilter == "Active" ? "selected" : "")>Active</option>
-            <option value="Inactive" @(ViewBag.StatusFilter == "Inactive" ? "selected" : "")>Inactive</option>
-        </select>
+    Status:
+    <select name="statusFilter" class="form-control" style="width: 120px; display: inline;">
+        <option value="">All</option>
+        <option value="Active" @(ViewBag.StatusFilter == "Active" ? "selected" : "")>Active</option>
+        <option value="Inactive" @(ViewBag.StatusFilter == "Inactive" ? "selected" : "")>Inactive</option>
+    </select>
 
-        Sort Age:
-        <select name="sortOrder" class="form-control" style="width: 150px; display: inline;">
-            <option value="">Default</option>
-            <option value="Age_Asc" @(ViewBag.SortOrder == "Age_Asc" ? "selected" : "")>Ascending</option>
-            <option value="Age_Desc" @(ViewBag.SortOrder == "Age_Desc" ? "selected" : "")>Descending</option>
-        </select>
+    Sort Age:
+    <select name="sortOrder" class="form-control" style="width: 150px; display: inline;">
+        <option value="">Default</option>
+        <option value="Age_Asc" @(ViewBag.SortOrder == "Age_Asc" ? "selected" : "")>Ascending</option>
+        <option value="Age_Desc" @(ViewBag.SortOrder == "Age_Desc" ? "selected" : "")>Descending</option>
+    </select>
 
-        <input type="submit" value="Search" class="btn btn-primary" />
-    </p>
+    <input type="submit" value="Search" class="btn btn-primary" />
+    @Html.ActionLink("Reset", "Index", "Users", null, new { @class = "btn btn-warning", style = "margin-left: 10px;" })
+</p>
 }
+<p>
+    @Html.ActionLink("Back to Full List", "Index", "Users", null, new { @class = "btn btn-secondary" })
+</p>
 <table class="table">
     <tr>
         <th>
